@@ -17,7 +17,7 @@ namespace Entra21.Exercicios03While
             while (indice < 13)
             {
                 Console.Write("Informe o nome da peça: ");
-                nomePeca = Convert.ToString(Console.ReadLine());
+                nomePeca = Console.ReadLine();
                 Console.Write("Informe o valor da peça: ");
                 valorPeca = Convert.ToDouble(Console.ReadLine());
 

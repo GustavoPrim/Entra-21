@@ -1,20 +1,26 @@
 ﻿using Entra21.Exercicios03While;
 
-Console.WriteLine(@"      MENU           
+Console.WriteLine(@"         MENU           
 01 - Exercício 01
-02 - Exercicio 02
-03 - Exercicio 03
-04 - Exercicio 04
-05 - Exercicio 05
-06 - Exercicio 06
-07 - Exercicio 07
-08 - Exercicio 08
-09 - Exercicio 09
-10 - Exercicio 10
-11 - Exercicio 11");
+02 - Exercício 02
+03 - Exercício 03
+04 - Exercício 04
+05 - Exercício 05
+06 - Exercício 06
+07 - Exercício 07
+08 - Exercício 08
+09 - Exercício 09
+10 - Exercício 10
+11 - Exercício 11
+12 - Exercício 12
+13 - Exercício 13
+14 - Exercicio 14
+17 - Exercício 17 ");
 
 Console.Write("Informe o exercício desejado: ");
 int menuDesejado = Convert.ToInt32(Console.ReadLine());
+
+Console.Clear();
 
 if (menuDesejado == 1)
 {
@@ -70,5 +76,25 @@ else if (menuDesejado == 11)
 {
     Exercicio11 exercicio11 = new Exercicio11();
     exercicio11.Executar();
+}
+else if (menuDesejado == 12)
+{
+    Exercicio12 exercicio12 = new Exercicio12();
+    exercicio12.Executar();
+}
+else if (menuDesejado == 13)
+{
+    Exercicio13 exercicio13 = new Exercicio13();
+    exercicio13.Executar();
+}
+else if (menuDesejado == 14)
+{
+    Exercicio14 exercicio14 = new Exercicio14();
+    exercicio14.Executar();
+}
+else if (menuDesejado == 17)
+{
+    Exercicio17 exercicio17 = new Exercicio17();
+    exercicio17.Executar();
 }
 

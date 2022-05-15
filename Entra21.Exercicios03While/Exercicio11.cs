@@ -33,7 +33,22 @@ namespace Entra21.Exercicios03While
 
                 if (opcaoEscolhida == 1)
                 {
-                    Console.WriteLine(primeiroNumeroUsuario + " + " + segundoNumeroUsuario + " = " + (primeiroNumeroUsuario + segundoNumeroUsuario));
+                    Console.WriteLine(
+                        primeiroNumeroUsuario + " + " + segundoNumeroUsuario + " = " + (primeiroNumeroUsuario + segundoNumeroUsuario));
+                }
+                if (opcaoEscolhida == 2)
+                {
+                    Console.WriteLine(
+                        primeiroNumeroUsuario + " - " + segundoNumeroUsuario + " = " + (primeiroNumeroUsuario - segundoNumeroUsuario));
+                }
+                if (opcaoEscolhida == 3)
+                {
+                    Console.WriteLine(
+                        primeiroNumeroUsuario + " * " + segundoNumeroUsuario + " = " + (primeiroNumeroUsuario * segundoNumeroUsuario));
+                }
+                if (opcaoEscolhida == 4)
+                {
+                    Console.WriteLine(primeiroNumeroUsuario + " / " + segundoNumeroUsuario + " = " + (primeiroNumeroUsuario / segundoNumeroUsuario));
                 }
             }
         }

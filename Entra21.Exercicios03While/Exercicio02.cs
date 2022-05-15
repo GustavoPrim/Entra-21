@@ -17,6 +17,7 @@ namespace Entra21.Exercicios03While
                 Console.Write("Informe o nome: ");
                 nomeUsuario = Console.ReadLine().ToLower().Trim();
                 quantidade = quantidade + 1;
+                Console.Clear();
             }
         }
     }

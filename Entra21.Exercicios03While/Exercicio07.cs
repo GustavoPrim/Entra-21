@@ -20,7 +20,7 @@ namespace Entra21.Exercicios03While
             while (quantidadeProduto < 5)
             {
                 Console.Write("Nome do produto: ");
-                nomeProduto = Convert.ToString(Console.ReadLine());
+                nomeProduto = Console.ReadLine();
 
                 Console.Write("Valor do produto: ");
                 valorProduto = Convert.ToDouble(Console.ReadLine());

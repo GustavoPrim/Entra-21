@@ -13,7 +13,6 @@ namespace Entra21.Exercicios03While
             Console.Write("Informe um número: ");
             int numeroTabuada = Convert.ToInt32(Console.ReadLine());
             int tabuada = 0;
-            string informacao = "";
 
             while (tabuada <= 1000)
             {
