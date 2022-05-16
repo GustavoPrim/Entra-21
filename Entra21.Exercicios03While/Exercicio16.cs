@@ -154,7 +154,8 @@ namespace Entra21.Exercicios03While
                             "\nW: " + quantidadeLetraW +
                             "\nX: " + quantidadeLetraX +
                             "\nY: " + quantidadeLetraY +
-                            "\nZ: " + quantidadeLetraZ);
+                            "\nZ: " + quantidadeLetraZ +
+                            "\nOutros caracteres: " + quantidadeCaracteresOutros);
 
         }
     }

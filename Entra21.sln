@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entra21.Exercicios03While", "Entra21.Exercicios03While\Entra21.Exercicios03While.csproj", "{2609B522-65A2-4A19-AD55-B39BF49F1613}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entra21.Exercicios03While", "Entra21.Exercicios03While\Entra21.Exercicios03While.csproj", "{2609B522-65A2-4A19-AD55-B39BF49F1613}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entra21.ExerciciosForComTryCatch", "Entra21.ExerciciosForComTryCatch\Entra21.ExerciciosForComTryCatch.csproj", "{BC1785BE-2957-41C2-B738-CD3229B726D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{2609B522-65A2-4A19-AD55-B39BF49F1613}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2609B522-65A2-4A19-AD55-B39BF49F1613}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2609B522-65A2-4A19-AD55-B39BF49F1613}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC1785BE-2957-41C2-B738-CD3229B726D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC1785BE-2957-41C2-B738-CD3229B726D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC1785BE-2957-41C2-B738-CD3229B726D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC1785BE-2957-41C2-B738-CD3229B726D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
