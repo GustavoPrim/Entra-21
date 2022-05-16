@@ -16,12 +16,13 @@ namespace Entra21.Exercicios03While
             string frase = "";
             while (indice < quantidadeCaracteres)
             {
-                Console.Write("Caracteres: ");
-                char caracteres = Convert.ToChar(Console.ReadLine());
-                frase = caracteres;
+                Console.Write("Caracter: ");
+                char caracter = Convert.ToChar(Console.ReadLine());
+                frase = frase + caracter;
                 indice = indice + 1;
             }
             Console.WriteLine(frase);
+            Console.WriteLine(); 
         }
     }
 }
