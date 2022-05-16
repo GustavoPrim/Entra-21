@@ -21,7 +21,7 @@ namespace Entra21.Exercicios03While
                 frase = frase + caracter;
                 indice = indice + 1;
             }
-            Console.WriteLine(frase);
+            Console.WriteLine("Texto: " + frase);
             Console.WriteLine(); 
         }
     }

@@ -15,6 +15,8 @@ Console.WriteLine(@"         MENU
 12 - Exercício 12
 13 - Exercício 13
 14 - Exercicio 14
+15 - Exercício 15
+16 - Exercício 16
 17 - Exercício 17 ");
 
 Console.Write("Informe o exercício desejado: ");
@@ -91,6 +93,16 @@ else if (menuDesejado == 14)
 {
     Exercicio14 exercicio14 = new Exercicio14();
     exercicio14.Executar();
+}
+else if (menuDesejado == 15)
+{
+    Exercicio15 exercicio15 = new Exercicio15();
+    exercicio15.Executar();
+}
+else if (menuDesejado == 16)
+{
+    Exercicio16 exercicio16 = new Exercicio16();
+    exercicio16.Executar();
 }
 else if (menuDesejado == 17)
 {
