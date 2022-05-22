@@ -4,7 +4,8 @@ Console.WriteLine(@"          MENU
 01 - Exercício 01
 02 - Exercicio 02
 03 - Exercício 03
-04 - Exercício 04");
+04 - Exercício 04
+05 - Exercício 05");
 
 Console.Write("Informe o exercício desejado: ");
 int menuDesejado = Convert.ToInt32(Console.ReadLine());

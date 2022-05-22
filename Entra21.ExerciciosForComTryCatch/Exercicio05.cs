@@ -10,7 +10,17 @@ namespace Entra21.ExerciciosForComTryCatch
     {
         public void Executar()
         {
-            Console.WriteLine(@"                                       MENU                                      
+            var codigoSelecionado = 0;
+            var quantidadeBolos = 0;
+            var quantidadeDoces = 0;
+            var quantidadeSanduiches = 0;
+            var quantidadePizzas = 0;
+            var valorProdutos = 0.0;
+            var somaProdutos = 0.0;
+
+            while (codigoSelecionado != 16)
+            {
+                Console.WriteLine(@"                                       MENU                                      
 ==================================================================================|
 |   Código   |     Tipo     |                    Nome                  |  Valor   |
 ==================================================================================|
@@ -46,27 +56,111 @@ namespace Entra21.ExerciciosForComTryCatch
 ==================================================================================|
 |             16            |                     SAIR                            |
 ==================================================================================|");
-
-            var quantidadeProdutosTotal = 0;
-            var quantidadeBolos = 0;
-            var quantidadeDoces = 0;
-            var quantidadeSanduiches = 0;
-            var quantidadePizzas = 0;
-            var valorTotal = 0;
-            var menuDesejado = false;
-            var fecharCardapio = false;
-            var quantidadeValida = false;
-            while (fecharCardapio == false)
-            {
-                menuDesejado = false;
-            }
-            while ()
-            {
-                try
+                var menuValido = false;
+                while (menuValido == false)
                 {
-
+                    try
+                    {
+                        Console.Write("Digite o código do produto desejado: ");
+                        codigoSelecionado = Convert.ToInt32(Console.ReadLine());
+                        if (codigoSelecionado < 0 || codigoSelecionado > 16)
+                        {
+                            Console.WriteLine("Produto selecionado não existe. Digite novamente");
+                        }
+                        else
+                        {
+                            menuValido = true;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Código de produto não é válido. Informe novamente");
+                    }
                 }
+                if (codigoSelecionado > 0 && codigoSelecionado < 6)
+                {
+                    quantidadeBolos = quantidadeBolos + 1;
+                    if (codigoSelecionado == 1)
+                    {
+                        valorProdutos = 29.50;
+                    }
+                    else if (codigoSelecionado == 2)
+                    {
+                        valorProdutos = 2.0;
+                    }
+                    else if (codigoSelecionado == 3)
+                    {
+                        valorProdutos = 29.23;
+                    }
+                    else if (codigoSelecionado == 4)
+                    {
+                        valorProdutos = 7.10;
+                    }
+                    else if (codigoSelecionado == 5)
+                    {
+                        valorProdutos = 19.33;
+                    }
+                }
+                else if (codigoSelecionado > 5 && codigoSelecionado < 8)
+                {
+                    quantidadeDoces = quantidadeBolos + 1;
+                    if (codigoSelecionado == 6)
+                    {
+                        valorProdutos = 17.71;
+                    }
+                    else if (codigoSelecionado == 7)
+                    {
+                        valorProdutos = 4.82;
+                    }
+                }
+                else if (codigoSelecionado > 7 && codigoSelecionado < 12)
+                {
+                    quantidadeSanduiches = quantidadeSanduiches + 1;
+                    if (codigoSelecionado == 8)
+                    {
+                        valorProdutos = 21.16;
+                    }
+                    else if (codigoSelecionado == 9)
+                    {
+                        valorProdutos = 12.70;
+                    }
+                    else if (codigoSelecionado == 10)
+                    {
+                        valorProdutos = 19.70;
+                    }
+                    else if (codigoSelecionado == 11)
+                    {
+                        valorProdutos = 28.22;
+                    }
+                }
+                else if (codigoSelecionado > 11 && codigoSelecionado < 16)
+                {
+                    quantidadePizzas = quantidadePizzas + 1;
+                    if(codigoSelecionado == 12)
+                    {
+                        valorProdutos = 8.98;
+                    }
+                    else if (codigoSelecionado == 13)
+                    {
+                        valorProdutos = 0.42;
+                    }
+                    else if (codigoSelecionado == 14)
+                    {
+                        valorProdutos = 18.36;
+                    }
+                    else if (codigoSelecionado == 15)
+                    {
+                        valorProdutos = 27.50;
+                    }
+                }
+                somaProdutos = somaProdutos + valorProdutos;
             }
+            var mediaProdutos = somaProdutos / (quantidadeBolos + quantidadeDoces + quantidadePizzas + quantidadeSanduiches);
+            Console.WriteLine("Quantidade de bolos escolhidos: " + quantidadeBolos + 
+                            "\nQuantidade de doces escolhidos: " + quantidadeDoces +
+                            "\nQuantidade de pizzas escolhidos: " + quantidadePizzas +
+                            "\nQuantidade de sanduíches escolhidos: " + quantidadeSanduiches + 
+                            "\nMédia dos produtos:R$ " + mediaProdutos);
         }
     }
 }
