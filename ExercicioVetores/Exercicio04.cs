@@ -51,8 +51,7 @@ namespace Entra21.ExerciciosVetores
 
             Console.Clear();
 
-            Console.WriteLine("Matéria escolhida: " + materia +
-                                "\nMédia da matéria: " + mediaNotas);
+            Console.WriteLine("Média em" + " " + materia + ": " + mediaNotas);
         }
     }
 }

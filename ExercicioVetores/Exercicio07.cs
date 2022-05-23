@@ -16,10 +16,10 @@ namespace Entra21.ExerciciosVetores
             {
                 Console.Write("Nome do animal: ");
                 string nomeAnimal = Console.ReadLine();
-                try
+                alturaValida = false;
+                while (alturaValida == false)
                 {
-                    alturaValida = false;
-                    while (alturaValida == false)
+                    try
                     {
                         Console.Write("Altura do animal: ");
                         altura[i] = Convert.ToDouble(Console.ReadLine());
@@ -32,10 +32,10 @@ namespace Entra21.ExerciciosVetores
                             alturaValida = true;
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Altura digitada não é válida, informe a altura novamente.");
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Altura digitada não é válida, informe a altura novamente.");
+                    }
                 }
             }
             Console.Clear();
@@ -51,7 +51,3 @@ namespace Entra21.ExerciciosVetores
         }
     }
 }
-
-
-
-

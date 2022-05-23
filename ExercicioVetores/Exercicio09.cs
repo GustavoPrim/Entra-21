@@ -10,12 +10,18 @@ namespace Entra21.ExerciciosVetores
     {
         public void Executar()
         {
-            var quantidade = 6;
-            var nomesPrimeiroVetor = new string[quantidade];
-            var nomesSegundoVetor = new string[quantidade];
+            var nomesPrimeiroVetor = new string[6];
+            var nomesSegundoVetor = new string[6];
             for (var i = 0; i < nomesPrimeiroVetor.Length; i++)
             {
-
+                Console.Write("Informe um nome: ");
+                nomesPrimeiroVetor[i] = Console.ReadLine();
+                Console.Clear();
+            }
+            for (int i = 0; i < nomesPrimeiroVetor.Length; i++)
+            {
+                nomesSegundoVetor[i] = nomesPrimeiroVetor[(nomesSegundoVetor.Length - i - 1)];
+                Console.WriteLine("Primeiro vetor: " + nomesPrimeiroVetor[i] + "         " + "Segundo vetor: " + nomesSegundoVetor[i]);
             }
         }
     }
