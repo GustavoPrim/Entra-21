@@ -13,8 +13,20 @@ namespace Entra21.ExerciciosVetores
             string[] nomes = new string[10];
             for (int i = 0; i < nomes.Length; i = i + 1)
             {
-                Console.Write("Informe um nome: ");
-                nomes[i] = Console.ReadLine();
+                var nomeValido = false;
+                while (nomeValido == false)
+                {
+                    Console.Write("Informe um nome: ");
+                    nomes[i] = Console.ReadLine();
+                    if (nomes[i].Length < 3 || nomes[i].Length > 15)
+                    {
+                        Console.WriteLine("O nome deve conter no máximo 15 e no mínimo 3 caracteres.");
+                    }
+                    else
+                    {
+                        nomeValido = true;
+                    }
+                }
             }
             Console.Clear();
             for (int i = 0; i < 10; i = i + 1)

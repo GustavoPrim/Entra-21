@@ -13,8 +13,27 @@ namespace Entra21.ExerciciosVetores
             double[] pesos = new double[5];
             for (int i = 0; i < 5; i++)
             {
-                Console.Write("Informe o peso: ");
-                pesos[i] = Convert.ToDouble(Console.ReadLine());
+                var pesoValido = false;
+                while (pesoValido == false)
+                {
+                    try
+                    {
+                        Console.Write("Informe o peso: ");
+                        pesos[i] = Convert.ToDouble(Console.ReadLine());
+                        if (pesos[i] < 0)
+                        {
+                            Console.WriteLine("O peso não pode ser negativo, informe o peso novamente");
+                        }
+                        else
+                        {
+                            pesoValido = true;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Peso informado não é válido, informe o peso novamente.");
+                    }
+                }
             }
             double somaPesos = 0.0;
             double mediaPesos = 0.0;
