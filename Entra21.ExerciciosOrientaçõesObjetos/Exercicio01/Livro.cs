@@ -8,24 +8,35 @@ namespace Entra21.ExerciciosOrientacoesObjetos.Exercicio01
 {
     public class Livro
     {
-        public string Titulo, Autor;
-        public int DataLancamento, Isbn, QuantidadePaginas, QuantidadePaginasLidas, QuantidadeReleituras;
+        public string DataLancamento, Isbn, Titulo, Autor;
+        public int QuantidadePaginas, QuantidadePaginasLidas, QuantidadeReleituras;
         public string IdiomaOriginal;
 
         public string ApresentarTituloAutor()
         {
-            Console.WriteLine(Titulo);
-            Console.WriteLine(Autor);
+            var titulo = Titulo;
+            var autor = Autor;
+            Console.WriteLine("Título do livro: " + titulo);
+            Console.WriteLine("Autor do livro: " + autor);
+
+            return titulo;
+            return autor;
         }
 
         public int ApresentarQuantidadePaginasParaLer()
         {
             var paginasParaLer = QuantidadePaginas - QuantidadePaginasLidas;
+            Console.WriteLine("Págiinas que faltam para ler: " + paginasParaLer);
+
+            return paginasParaLer;
         }
 
         public int ApresentarQuantidadePaginasLidasNoTotal()
         {
-            var paginasLidasTotal = QuantidadePaginasLidas;
+            var paginasLidasTotal = QuantidadePaginas * QuantidadeReleituras + QuantidadePaginasLidas;
+            Console.WriteLine("Páginas lidas no total: " + paginasLidasTotal);
+
+            return paginasLidasTotal;
         }
     }
 }

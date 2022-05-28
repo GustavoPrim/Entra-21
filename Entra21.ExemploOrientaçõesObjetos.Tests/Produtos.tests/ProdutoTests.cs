@@ -1,4 +1,4 @@
-﻿using Entra21.ExemploOrientaçõesObjetos.Produtos;
+﻿using Entra21.ExemploOrientacoesObjetos.Produtos;
 using FluentAssertions;
 using System;
 using System.Collections.Generic;
