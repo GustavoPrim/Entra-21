@@ -70,7 +70,7 @@ namespace Entra21.ExerciciosOrientacoesObjetos.Exercicio02
             {
                 Console.WriteLine("Temperatura origem digitada: Celsius" +
                                 "\nTemperatura destino digitada: Kelvin" +
-                                "\nTemperatura convertida: " + CalcularCelsiusParaKelvin);
+                                "\nTemperatura convertida: " + CalcularCelsiusParaKelvin());
             }
             else if (TemperaturaOrigem == 3 && TemperaturaDestino == 1)
             {

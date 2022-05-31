@@ -8,9 +8,10 @@ namespace Entra21.ExerciciosOrientacoesObjetos.Exercicio01
 {
     public class Livro
     {
-        public string DataLancamento, Isbn, Titulo, Autor;
+        public string Isbn, Titulo, Autor;
         public int QuantidadePaginas, QuantidadePaginasLidas, QuantidadeReleituras;
         public string IdiomaOriginal;
+        public DateTime DataLancamento;
 
         public string ApresentarTituloAutor()
         {
@@ -37,6 +38,14 @@ namespace Entra21.ExerciciosOrientacoesObjetos.Exercicio01
             Console.WriteLine("Páginas lidas no total: " + paginasLidasTotal);
 
             return paginasLidasTotal;
+        }
+
+        public double ApresentarQuantidadeAnosAposPublicacao()
+        {
+            var anosAposPublicacao = DateTime.Now.Year - DataLancamento.Year;
+            Console.WriteLine("Quantidade de anos após publicação do livro: " + anosAposPublicacao);
+            
+            return anosAposPublicacao;
         }
     }
 }

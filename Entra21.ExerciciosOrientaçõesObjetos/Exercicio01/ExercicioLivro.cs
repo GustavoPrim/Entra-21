@@ -16,7 +16,7 @@ namespace Entra21.ExerciciosOrientacoesObjetos.Exercicio01
             livro.Autor = "Antoine de Saint-Exupéry";
             livro.IdiomaOriginal = "Francês";
             livro.Isbn = "8595081514";
-            livro.DataLancamento = "27 agosto 2018";
+            livro.DataLancamento = new DateTime(2018, 08, 27);
             livro.QuantidadePaginas = 96;
             livro.QuantidadePaginasLidas = 68;
             livro.QuantidadeReleituras = 5;
@@ -24,6 +24,7 @@ namespace Entra21.ExerciciosOrientacoesObjetos.Exercicio01
             livro.ApresentarTituloAutor();
             livro.ApresentarQuantidadePaginasParaLer();
             livro.ApresentarQuantidadePaginasLidasNoTotal();
+            livro.ApresentarQuantidadeAnosAposPublicacao();
         }
     }
 }
