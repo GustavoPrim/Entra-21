@@ -36,7 +36,7 @@ namespace Entra21.ExerciciosListas
                                                 "\n" + conteudosPassados[4] +
                                                 "\n" + conteudosPassados[5] +
                                                 "\n" + conteudosPassados[6]);
-
+            
             conteudosPassados.Add("Vetor");
             conteudosPassados.Add("Vetor");
 
