@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entra21.ExercicioListasObjetos
+﻿namespace Entra21.ExercicioListasObjetos
 {
     internal class Triangulo
     {
@@ -17,6 +11,9 @@ namespace Entra21.ExercicioListasObjetos
         {
             if ((Lado1 + Lado2) > Lado3 || (Lado1 + Lado3) > Lado2 || (Lado2 + Lado3) > Lado1)
                 return true;
+
+            else
+                return false;
         }
     }
 }

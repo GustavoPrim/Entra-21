@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entra21.ExercicioListasObjetos
+﻿namespace Entra21.ExercicioListasObjetos
 {
     internal class TrianguloServico
     {
         private List<Triangulo> triangulos = new List<Triangulo>();
         private int codigoAtual = 1;
 
-        public void Adicionar(int lado1, int lado2, int lado3, int codigo)
+        public void Adicionar(int lado1, int lado2, int lado3)
         {
             Triangulo triangulo = new Triangulo();
             triangulo.Lado1 = lado1;
@@ -26,7 +20,7 @@ namespace Entra21.ExercicioListasObjetos
         public bool Editar(int codigoAlterar, int lado1, int lado2, int lado3)
         {
             Triangulo trianguloEditar = ObterPorCodigo(codigoAlterar);
-            
+
             if (trianguloEditar == null)
                 return false;
 
@@ -37,9 +31,19 @@ namespace Entra21.ExercicioListasObjetos
             return true;
         }
 
-        public void Apagar()
+        public bool Apagar(int codigo)
         {
+            for (var i = 0; i < triangulos.Count; i++)
+            {
+                Triangulo triangulo = triangulos[i];
+                if (triangulo.Codigo == codigo)
+                {
+                    triangulos.Remove(triangulo);
 
+                    return true;
+                }
+            }
+            return false;
         }
 
         public List<Triangulo> ObterTodos()
@@ -51,7 +55,7 @@ namespace Entra21.ExercicioListasObjetos
         {
             for (var i = 0; i < triangulos.Count; i++)
             {
-                
+
             }
             return null;
         }
