@@ -108,7 +108,7 @@ Total: {produto.CalcularPrecoTotal()}");
         {
             ApresentarProdutos();
 
-            Console.WriteLine("Código produto desejado: ");
+            Console.Write("Código produto desejado: ");
             var codigo = Convert.ToInt32(Console.ReadLine());
 
             Console.Write("Nome: ");
@@ -179,6 +179,7 @@ Total: {produto.CalcularPrecoTotal()}");
 
             produtoServico.Adicionar(nome, precoUnitario, localizacaoProduto, quantidade);
         }
+
         private ProdutoLocalizacao ObterLocalizacaoProduto(string localizacao)
         {
             if (localizacao.ToLower() == "armazem")

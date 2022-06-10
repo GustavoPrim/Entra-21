@@ -1,6 +1,6 @@
 ﻿namespace Entra21.ExercicioListasObjetos
 {
-    internal class TrianguloControlador
+    internal class TrianguloController
     {
         private TrianguloServico trianguloServico = new TrianguloServico();
 
@@ -15,8 +15,8 @@
 
                 Console.Clear();
 
-                //if (codigo == 1)
-                //    Cadastrar();
+                if (codigo == 1)
+                    Cadastrar();
 
                 else if (codigo == 2)
                     Editar();
@@ -24,13 +24,16 @@
                 else if (codigo == 3)
                     Apagar();
 
-                //else if (codigo == 4)
-                //ApresentarTriangulo();
+                else if (codigo == 4)
+                    ApresentarTriangulo();
 
                 else if (codigo == 5)
-                    ApresentarTriangulos();
+                    ApresentarTodos();
+
+                Console.WriteLine("\n\nAperte alguma tecla para continuar");
+                Console.ReadKey();
             }
-        }
+        } //V
 
         private void Cadastrar()
         {
@@ -44,11 +47,11 @@
             var lado3 = Convert.ToInt32(Console.ReadLine());
 
             trianguloServico.Adicionar(lado1, lado2, lado3);
-        }
+        } //V
 
         private int Menu()
         {
-            Console.WriteLine($@"
+            Console.WriteLine($@"  MENU
 01 - Cadastrar
 02 - Editar
 03 - Apagar
@@ -58,7 +61,7 @@
 
             int codigo = SolicitarCodigo();
             return codigo;
-        }
+        } //V
 
         private int SolicitarCodigo()
         {
@@ -67,7 +70,7 @@
             {
                 try
                 {
-                    Console.Write("Código informado não existe, informe o código novamente: ");
+                    Console.Write("Informe o menu desejado: ");
                     codigo = Convert.ToInt32(Console.ReadLine());
                 }
                 catch
@@ -76,33 +79,60 @@
                 }
             }
             return codigo;
-        }
+        } //V
 
         private void Editar()
         {
-            ApresentarTriangulos();
+            ApresentarTodos();
 
-            Console.WriteLine("Código de triângulo desejado: ");
-            var codigoDesejado = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Código do triângulo desejado: ");
+            var codigo = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Informe o Lado1: ");
+            Console.Write("Informe o primeiro lado do triângulo: ");
             var lado1 = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Informe o Lado2: ");
+            Console.Write("Informe o segundo lado do triângulo: ");
             var lado2 = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Informe o Lado3: ");
+            Console.Write("Informe o terceiro lado do triângulo: ");
             var lado3 = Convert.ToInt32(Console.ReadLine());
 
-            var trianguloEditado = trianguloServico.Editar(lado1, lado2, lado3, codigoDesejado);
-            if (trianguloEditado == false)
+            var alterado = trianguloServico.Editar(codigo, lado1, lado2, lado3);
+
+            if (alterado == false)
+            {
                 Console.WriteLine("Código digitado não existe");
-
+            }
             else
+            {
                 Console.WriteLine("Triângulo cadastrado com sucesso");
-        }
+            }
+        } //V
 
-        private void ApresentarTriangulos()
+        private void ApresentarTriangulo()
+        {
+            ApresentarTodos();
+
+            Console.Write("Informe o código do triângulo que deseja ver: ");
+            var codigo = Convert.ToInt32(Console.ReadLine());
+
+            var trianguloSelecionado = trianguloServico.ObterPorCodigo(codigo);
+
+            if (trianguloSelecionado == null)
+            {
+                Console.WriteLine("Triângulo não existe");
+                return;
+            }
+
+            Console.Clear();
+            Console.WriteLine($@"
+Código: {trianguloSelecionado.Codigo}
+Primeiro lado do triângulo: {trianguloSelecionado.Lado1}
+Segundo lado do triângulo: {trianguloSelecionado.Lado2}
+Terceiro lado do triângulo: {trianguloSelecionado.Lado3}");
+        } //V
+
+        private void ApresentarTodos()
         {
             var triangulos = trianguloServico.ObterTodos();
 
@@ -120,12 +150,14 @@
 Código: {trianguloAtual.Codigo}
 Primeiro lado do triângulo: {trianguloAtual.Lado1}
 Segundo lado do triângulo: {trianguloAtual.Lado2}
-Terceiro lado do triângulo: {trianguloAtual.Lado3}");
+Terceiro lado do triângulo: {trianguloAtual.Lado3}" + "\n");
+                Console.WriteLine();
             }
-        }
+        } //V
+
         private void Apagar()
         {
-            ApresentarTriangulos();
+            ApresentarTodos();
 
             Console.Write("Informe o código do produto para apagar: ");
             var codigo = Convert.ToInt32(Console.ReadLine());
@@ -133,8 +165,8 @@ Terceiro lado do triângulo: {trianguloAtual.Lado3}");
             var codigoApagado = trianguloServico.Apagar(codigo);
 
             Console.WriteLine(codigoApagado == true
-                ? "Código apagado com sucesso"
+                ? "Triângulo removido com sucesso"
                 : "Nenhum triângulo cadastrado com esse código");
-        }
+        } //V
     }
 }
