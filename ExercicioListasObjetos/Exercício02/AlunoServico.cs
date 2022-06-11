@@ -8,6 +8,6 @@ namespace Entra21.ExercicioListasObjetos.Exercício02
 {
     internal class AlunoServico
     {
-
+        
     }
 }
