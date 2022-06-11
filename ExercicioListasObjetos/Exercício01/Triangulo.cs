@@ -1,4 +1,4 @@
-﻿namespace Entra21.ExercicioListasObjetos
+﻿namespace Entra21.ExercicioListasObjetos.Exercício01
 {
     internal class Triangulo
     {
@@ -9,7 +9,7 @@
 
         public bool ValidarTriangulo()
         {
-            if ((Lado1 + Lado2) > Lado3 || (Lado1 + Lado3) > Lado2 || (Lado2 + Lado3) > Lado1)
+            if (Lado1 + Lado2 > Lado3 || Lado1 + Lado3 > Lado2 || Lado2 + Lado3 > Lado1)
                 return true;
 
             else

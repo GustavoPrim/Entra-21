@@ -1,4 +1,4 @@
-﻿namespace Entra21.ExercicioListasObjetos
+﻿namespace Entra21.ExercicioListasObjetos.Exercício01
 {
     internal class TrianguloServico
     {
