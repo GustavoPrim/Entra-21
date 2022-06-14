@@ -37,16 +37,35 @@
                 else if (codigo == 4)
                     EditarNotasAlunos();
 
-                else if (codigo == 5)
-                {
-                }
+                //else if (codigo == 5)
+                //    ObterAlunoPorNome();
+                
+                //else if (codigo == 6)
+                //    ObterTodosAlunos();
 
-                else if (codigo == 6)
-                    ObterTodosAlunos();
+                //else if (codigo == 7)
+                //    ObterMediasNotas();
 
+                //else if (codigo == 8)
+                //    ObterAlunosAprovados();
 
+                //else if (codigo == 9)
+                //    ObterAlunosReprovados();
 
+                //else if (codigo == 10)
+                //    ObterAlunosEmExame();
 
+                else if (codigo == 11)
+                    ObterMediaPorCodigoMatricula();
+
+                //else if (codigo == 12)
+                //    ObterStatusPorCodigoMatricula();
+
+                //else if (codigo == 13)
+                //    ObterMediaIdades();
+
+                Console.WriteLine("\n\nAperte alguma tecla para continuar");
+                Console.ReadKey();
             }
         }
 
@@ -236,12 +255,12 @@ Terceira nota do aluno: {alunoSelecionado.Nota3}" + "\n");
 
         public void ObterMediasNotas()
         {
-            ObterMediasNotas();
+            
         }
 
-        //public double ObterMediaPorCodigoMatricula()
-        //{
+        public void ObterMediaPorCodigoMatricula()
+        {
 
-        //}
+        }
     }
 }
