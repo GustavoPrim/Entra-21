@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entra21.ExercicioListasObjetos.Exercício02
+﻿namespace Entra21.ExercicioListasObjetos.Exercício02
 {
     internal class AlunoServico
     {
@@ -86,6 +80,19 @@ namespace Entra21.ExercicioListasObjetos.Exercício02
             return null;
         }
 
+        public List<double> ObterMediasNotas()
+        {
+            var mediaNotas = new List<double>();
+
+            for (var i = 0; i < alunos.Count; i++)
+            {
+                var aluno = alunos[i];
+
+                mediaNotas.Add(aluno.CalcularMedia());
+            }
+            return mediaNotas;
+        }
+
         public List<string> ObterNomesAlunos()
         {
             var nomes = new List<string>();
@@ -98,17 +105,5 @@ namespace Entra21.ExercicioListasObjetos.Exercício02
             }
             return nomes;
         }
-
-        //public List<double> ObterMediasAlunos()
-        //{
-        //    var medias = new List<double>();
-
-        //    for (var i = 0; i < alunos.Count; i++)
-        //    {
-        //        var aluno = alunos[i];
-
-        //        medias.Add(aluno.)
-        //    }
-        //}
     }
 }

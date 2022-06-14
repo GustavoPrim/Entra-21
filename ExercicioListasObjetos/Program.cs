@@ -1,4 +1,5 @@
 ﻿using Entra21.ExercicioListasObjetos.Exercício01;
+using Entra21.ExercicioListasObjetos.Exercício02;
 
 var menuDesejado = 0;
 while(menuDesejado != 3)
@@ -23,15 +24,15 @@ while(menuDesejado != 3)
         {
             Console.WriteLine("Opção de menu inválida, digite novamente.");
         }
-    }
-    if (menuDesejado == 1)
-    {
-        TrianguloController controller = new TrianguloController();
-        controller.GerenciarMenu();
-    }
-    else if (menuDesejado == 2)
-    {
-
-    }
-        
+        if (menuDesejado == 1)
+        {
+            TrianguloController controller = new TrianguloController();
+            controller.GerenciarMenu();
+        }
+        else if (menuDesejado == 2)
+        {
+            AlunoController controllerAluno = new AlunoController();
+            controllerAluno.GerenciarMenu();
+        }
+    }    
 }

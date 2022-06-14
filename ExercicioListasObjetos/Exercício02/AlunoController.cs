@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entra21.ExercicioListasObjetos.Exercício02
+﻿namespace Entra21.ExercicioListasObjetos.Exercício02
 {
     internal class AlunoController
     {
@@ -13,23 +7,23 @@ namespace Entra21.ExercicioListasObjetos.Exercício02
         public void GerenciarMenu()
         {
             int codigo = 0;
-            while(codigo != 13)
+            while (codigo != 14)
             {
                 Console.Clear();
 
                 codigo = Menu();
 
                 Console.Clear();
-
-                //05 - OBTER O NOME DOS ALUNOS
-                //06 - OBTER A MEDIA DA NOTA DOS ALUNOS
-                //07 - OBTER OS ALUNOS APROVADOS
-                //08 - OBTER OS ALUNOS REPROVADOS
-                //09 - OBTER OS ALUNOS EM EXAME
-                //10 - OBTER A MEDIA DAS NOTAS POR CÓDIGO DE MATRÍCULA
-                //11 - OBTER STATUS DO ALUNO POR CÓDIGO DE MATRÍCULA
-                //12 - OBTER A MEDIA DAS IDADES DOS ALUNOS
-                //13 - Sair"
+                //05 - OBTER ALUNO POR NOME
+                //06 - OBTER ALUNO POR CÓDIGO
+                //07 - OBTER A MEDIA DA NOTA DOS ALUNOS
+                //08 - OBTER OS ALUNOS APROVADOS
+                //09 - OBTER OS ALUNOS REPROVADOS
+                //10 - OBTER OS ALUNOS EM EXAME
+                //11 - OBTER A MEDIA DAS NOTAS POR CÓDIGO DE MATRÍCULA
+                //12 - OBTER STATUS DO ALUNO POR CÓDIGO DE MATRÍCULA
+                //13 - OBTER A MEDIA DAS IDADES DOS ALUNOS
+                //14 - Sair"
 
                 if (codigo == 1)
                     AdicionarAluno();
@@ -42,8 +36,16 @@ namespace Entra21.ExercicioListasObjetos.Exercício02
 
                 else if (codigo == 4)
                     EditarNotasAlunos();
-                    
-                    
+
+                else if (codigo == 5)
+                {
+                }
+
+                else if (codigo == 6)
+                    ObterTodosAlunos();
+
+
+
 
             }
         }
@@ -107,7 +109,7 @@ namespace Entra21.ExercicioListasObjetos.Exercício02
 
             var alterado = alunoServico.EditarDadosCadastrais(codigoMatricula, nome, idade, materiaFavorita);
 
-            if(alterado == false)
+            if (alterado == false)
                 Console.WriteLine("Código de matrícula não existe");
 
             else
@@ -133,7 +135,7 @@ namespace Entra21.ExercicioListasObjetos.Exercício02
 
             var alterado = alunoServico.EditarNotasAlunos(codigoMatricula, nota1, nota2, nota3);
 
-            if(alterado == false)
+            if (alterado == false)
                 Console.WriteLine("Código de matrícula não existe");
 
             else
@@ -147,15 +149,16 @@ namespace Entra21.ExercicioListasObjetos.Exercício02
 02 - REMOVER ALUNO
 03 - EDITAR DADOS CADASTRAIS DO ALUNO
 04 - EDITAR NOTAS DOS ALUNOS
-05 - OBTER O NOME DOS ALUNOS
-06 - OBTER A MEDIA DA NOTA DOS ALUNOS
-07 - OBTER OS ALUNOS APROVADOS
-08 - OBTER OS ALUNOS REPROVADOS
-09 - OBTER OS ALUNOS EM EXAME
-10 - OBTER A MEDIA DAS NOTAS POR CÓDIGO DE MATRÍCULA
-11 - OBTER STATUS DO ALUNO POR CÓDIGO DE MATRÍCULA
-12 - OBTER A MEDIA DAS IDADES DOS ALUNOS
-13 - Sair");
+05 - OBTER ALUNO POR NOME
+06 - OBTER TODOS OS ALUNOS
+07 - OBTER A MEDIA DA NOTA DOS ALUNOS
+08 - OBTER OS ALUNOS APROVADOS
+09 - OBTER OS ALUNOS REPROVADOS
+10 - OBTER OS ALUNOS EM EXAME
+11 - OBTER A MEDIA DAS NOTAS POR CÓDIGO DE MATRÍCULA
+12 - OBTER STATUS DO ALUNO POR CÓDIGO DE MATRÍCULA
+13 - OBTER A MEDIA DAS IDADES DOS ALUNOS
+14 - Sair");
 
             var codigo = SolicitarCodigo();
             return codigo;
@@ -164,7 +167,7 @@ namespace Entra21.ExercicioListasObjetos.Exercício02
         private int SolicitarCodigo()
         {
             var codigo = 0;
-            while(codigo < 1 || codigo > 13)
+            while (codigo < 1 || codigo > 13)
             {
                 try
                 {
@@ -183,9 +186,9 @@ namespace Entra21.ExercicioListasObjetos.Exercício02
         {
             var alunos = alunoServico.ObterTodosAlunos();
 
-            if(alunos.Count == 0)
+            if (alunos.Count == 0)
             {
-                Console.WriteLine("Não foi cadastrado nenhum alunos no momento");
+                Console.WriteLine("Não foi cadastrado nenhum alunos até o momento");
                 return;
             }
 
@@ -204,5 +207,41 @@ Terceira nota do aluno: {alunoAtual.Nota3}" + "\n");
                 Console.WriteLine();
             }
         }
+
+        private void ObterAlunoPorCodigo()
+        {
+            ObterTodosAlunos();
+
+            Console.WriteLine("Informe o código de matrícula do aluno que deseja ver o cadastro: ");
+            var codigoMatricula = Convert.ToInt32(Console.ReadLine());
+
+            var alunoSelecionado = alunoServico.ObterAlunoPorCodigo(codigoMatricula);
+
+            if (alunoSelecionado == null)
+            {
+                Console.WriteLine("Aluno não cadastrado até o momento");
+                return;
+            }
+            Console.Clear();
+            Console.WriteLine($@"
+Nome do aluno: {alunoSelecionado.Nome}
+Código de matrícula do aluno: {alunoSelecionado.CodigoMatricula}
+Idade do aluno: {alunoSelecionado.Idade}
+Matéria favorita do aluno: {alunoSelecionado.MateriaFavorita}
+Primeira nota do aluno: {alunoSelecionado.Nota1}
+Segunda nota do aluno: {alunoSelecionado.Nota2}
+Terceira nota do aluno: {alunoSelecionado.Nota3}" + "\n");
+            Console.WriteLine();
+        }
+
+        public void ObterMediasNotas()
+        {
+            ObterMediasNotas();
+        }
+
+        //public double ObterMediaPorCodigoMatricula()
+        //{
+
+        //}
     }
 }

@@ -15,7 +15,7 @@
             triangulo.Codigo = codigoAtual;
             codigoAtual = codigoAtual + 1;
             triangulos.Add(triangulo);
-        } //V
+        }
 
         public bool Editar(int codigoAlterar, int lado1, int lado2, int lado3)
         {
@@ -29,7 +29,7 @@
             trianguloEditar.Lado3 = lado3;
 
             return true;
-        } //V
+        }
 
         public bool Apagar(int codigo)
         {

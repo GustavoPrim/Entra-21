@@ -33,7 +33,7 @@
                 Console.WriteLine("\n\nAperte alguma tecla para continuar");
                 Console.ReadKey();
             }
-        } //V
+        }
 
         private void Cadastrar()
         {
@@ -47,7 +47,7 @@
             var lado3 = Convert.ToInt32(Console.ReadLine());
 
             trianguloServico.Adicionar(lado1, lado2, lado3);
-        } //V
+        }
 
         private int Menu()
         {
@@ -61,7 +61,7 @@
 
             int codigo = SolicitarCodigo();
             return codigo;
-        } //V
+        }
 
         private int SolicitarCodigo()
         {
@@ -79,7 +79,7 @@
                 }
             }
             return codigo;
-        } //V
+        }
 
         private void Editar()
         {
@@ -107,7 +107,7 @@
             {
                 Console.WriteLine("Triângulo cadastrado com sucesso");
             }
-        } //V
+        }
 
         private void ApresentarTriangulo()
         {
@@ -130,7 +130,7 @@ Código: {trianguloSelecionado.Codigo}
 Primeiro lado do triângulo: {trianguloSelecionado.Lado1}
 Segundo lado do triângulo: {trianguloSelecionado.Lado2}
 Terceiro lado do triângulo: {trianguloSelecionado.Lado3}");
-        } //V
+        }
 
         private void ApresentarTodos()
         {
@@ -153,7 +153,7 @@ Segundo lado do triângulo: {trianguloAtual.Lado2}
 Terceiro lado do triângulo: {trianguloAtual.Lado3}" + "\n");
                 Console.WriteLine();
             }
-        } //V
+        }
 
         private void Apagar()
         {
@@ -167,6 +167,6 @@ Terceiro lado do triângulo: {trianguloAtual.Lado3}" + "\n");
             Console.WriteLine(codigoApagado == true
                 ? "Triângulo removido com sucesso"
                 : "Nenhum triângulo cadastrado com esse código");
-        } //V
+        }
     }
 }
