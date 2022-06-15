@@ -84,11 +84,14 @@
         {
             var mediaNotas = new List<double>();
 
+            if (mediaNotas == null)
+                return null;
+
             for (var i = 0; i < alunos.Count; i++)
             {
-                var aluno = alunos[i];
+                var alunoAtual = alunos[i];
 
-                mediaNotas.Add(aluno.CalcularMedia());
+                mediaNotas.Add(alunoAtual.CalcularMedia());
             }
             return mediaNotas;
         }
@@ -104,6 +107,51 @@
                 nomes.Add(aluno.Nome);
             }
             return nomes;
+        }
+
+        public List<string> ObterAprovados()
+        {
+            var aprovados = new List<string>();
+
+            if (alunos == null)
+                return null;
+
+            for (int i = 0; i < alunos.Count; i++)
+            {
+                var alunoAtual = alunos[i];
+
+                if (alunoAtual.ObterStatus() == AlunoStatus.Aprovado)
+                    aprovados.Add(alunoAtual.Nome);
+            }
+            return aprovados;
+        }
+
+        public double ObterMediaPorCodigoMatricula(int codigoMatricula)
+        {
+            var alunoSelecionado = ObterAlunoPorCodigo(codigoMatricula);
+
+            return alunoSelecionado.CalcularMedia();
+        }
+
+        public AlunoStatus ObterStatusPorCodigoMatricula(int codigoMatricula)
+        {
+            var alunoSelecionado = ObterAlunoPorCodigo(codigoMatricula);
+
+            return alunoSelecionado.ObterStatus();
+        }
+
+        public double ObterMediaIdades()
+        {
+            var somaTotalIdades = 0.0;
+
+            for (int i = 0; i < alunos.Count; i++)
+            {
+                somaTotalIdades += alunos[i].Idade;
+            }
+
+            var mediaIdades = somaTotalIdades / alunos.Count;
+
+            return mediaIdades;
         }
     }
 }

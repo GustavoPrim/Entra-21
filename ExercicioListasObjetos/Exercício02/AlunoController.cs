@@ -39,7 +39,7 @@
 
                 //else if (codigo == 5)
                 //    ObterAlunoPorNome();
-                
+
                 //else if (codigo == 6)
                 //    ObterTodosAlunos();
 
@@ -154,6 +154,8 @@
 
             var alterado = alunoServico.EditarNotasAlunos(codigoMatricula, nota1, nota2, nota3);
 
+            var alunoEditado = alunoServico.ObterAlunoPorCodigo(codigoMatricula);
+
             if (alterado == false)
                 Console.WriteLine("Código de matrícula não existe");
 
@@ -253,14 +255,23 @@ Terceira nota do aluno: {alunoSelecionado.Nota3}" + "\n");
             Console.WriteLine();
         }
 
-        public void ObterMediasNotas()
+        public void ApresentarMediaNotas()
         {
-            
+            Console.WriteLine($"A média das notas dos alunos é: {alunoServico.ObterMediasNotas()}");
         }
 
-        public void ObterMediaPorCodigoMatricula()
-        {
 
+        private void ListarAprovados()
+        {
+            var nomesAprovados = "";
+            var alunos = alunoServico.ObterAprovados();
+
+            for (var i = 0; i < alunos.Count; i++)
+            {
+                nomesAprovados += alunos[i] + " | ";
+            }
+
+            Console.WriteLine($"O nome dos alunos aprovados é: {nomesAprovados}");
         }
     }
 }
