@@ -55,8 +55,8 @@
                 //else if (codigo == 10)
                 //    ObterAlunosEmExame();
 
-                else if (codigo == 11)
-                    ObterMediaPorCodigoMatricula();
+                //else if (codigo == 11)
+                //    ObterMediaPorCodigoMatricula();
 
                 //else if (codigo == 12)
                 //    ObterStatusPorCodigoMatricula();
