@@ -14,16 +14,6 @@
                 codigo = Menu();
 
                 Console.Clear();
-                //05 - OBTER ALUNO POR NOME
-                //06 - OBTER ALUNO POR CÓDIGO
-                //07 - OBTER A MEDIA DA NOTA DOS ALUNOS
-                //08 - OBTER OS ALUNOS APROVADOS
-                //09 - OBTER OS ALUNOS REPROVADOS
-                //10 - OBTER OS ALUNOS EM EXAME
-                //11 - OBTER A MEDIA DAS NOTAS POR CÓDIGO DE MATRÍCULA
-                //12 - OBTER STATUS DO ALUNO POR CÓDIGO DE MATRÍCULA
-                //13 - OBTER A MEDIA DAS IDADES DOS ALUNOS
-                //14 - Sair"
 
                 if (codigo == 1)
                     AdicionarAluno();
@@ -37,37 +27,38 @@
                 else if (codigo == 4)
                     EditarNotasAlunos();
 
-                //else if (codigo == 5)
-                //    ObterAlunoPorNome();
+                else if (codigo == 5)
+                    ObterNomes();
 
-                //else if (codigo == 6)
-                //    ObterTodosAlunos();
+                else if (codigo == 6)
+                    ObterTodosAlunos();
 
-                //else if (codigo == 7)
-                //    ObterMediasNotas();
+                else if (codigo == 7)
+                    ObterAlunoPorCodigo();
 
-                //else if (codigo == 8)
-                //    ObterAlunosAprovados();
+                else if (codigo == 8)
+                    ObterMediaPorCodigo();
 
-                //else if (codigo == 9)
-                //    ObterAlunosReprovados();
+                else if (codigo == 9)
+                    ListarAprovados();
 
-                //else if (codigo == 10)
-                //    ObterAlunosEmExame();
+                else if (codigo == 10)
+                    ListarReprovados();
 
-                //else if (codigo == 11)
-                //    ObterMediaPorCodigoMatricula();
+                else if (codigo == 11)
+                    ListarEmExame();
 
-                //else if (codigo == 12)
-                //    ObterStatusPorCodigoMatricula();
+                else if (codigo == 12)
+                    ObterMediaIdades();
 
-                //else if (codigo == 13)
-                //    ObterMediaIdades();
+                else if (codigo == 13)
+                    ObterStatusPorCodigo();
+
 
                 Console.WriteLine("\n\nAperte alguma tecla para continuar");
                 Console.ReadKey();
             }
-        }
+        } //V
 
         private void RemoverAluno()
         {
@@ -81,7 +72,7 @@
             Console.WriteLine(nomeApagado == true
                 ? "Cadastro do aluno removido com sucesso"
                 : "Nenhum aluno como esse código de matrícula cadastrado");
-        }
+        } //V
 
         public void AdicionarAluno()
         {
@@ -107,7 +98,7 @@
             var nota3 = Convert.ToDouble(Console.ReadLine());
 
             alunoServico.AdicionarAluno(nome, codigoMatricula, materiaFavorita, idade, nota1, nota2, nota3);
-        }
+        } //V
 
         public void EditarDadosCadastrais()
         {
@@ -133,7 +124,7 @@
 
             else
                 Console.WriteLine("Cadastro do aluno atualizado com sucesso");
-        }
+        } //V
 
         public void EditarNotasAlunos()
         {
@@ -161,7 +152,7 @@
 
             else
                 Console.WriteLine("Cadastro do aluno atualizado com sucesso");
-        }
+        } //V
 
         private int Menu()
         {
@@ -172,18 +163,18 @@
 04 - EDITAR NOTAS DOS ALUNOS
 05 - OBTER ALUNO POR NOME
 06 - OBTER TODOS OS ALUNOS
-07 - OBTER A MEDIA DA NOTA DOS ALUNOS
-08 - OBTER OS ALUNOS APROVADOS
-09 - OBTER OS ALUNOS REPROVADOS
-10 - OBTER OS ALUNOS EM EXAME
-11 - OBTER A MEDIA DAS NOTAS POR CÓDIGO DE MATRÍCULA
-12 - OBTER STATUS DO ALUNO POR CÓDIGO DE MATRÍCULA
-13 - OBTER A MEDIA DAS IDADES DOS ALUNOS
+07 - OBTER ALUNO POR CÓDIGO
+08 - OBTER A MEDIA DA NOTA DOS ALUNOS POR CÓDIGO
+09 - OBTER OS ALUNOS APROVADOS
+10 - OBTER OS ALUNOS REPROVADOS
+11 - OBTER OS ALUNOS EM EXAME
+12 - OBTER A MÉDIA DAS IDADES DOS ALUNOS
+13 - OBTER STATUS DO ALUNO POR CÓDIGO DE MATRÍCULA
 14 - Sair");
 
             var codigo = SolicitarCodigo();
             return codigo;
-        }
+        } //V
 
         private int SolicitarCodigo()
         {
@@ -201,7 +192,7 @@
                 }
             }
             return codigo;
-        }
+        } //V
 
         private void ObterTodosAlunos()
         {
@@ -227,7 +218,7 @@ Segunda nota do aluno: {alunoAtual.Nota2}
 Terceira nota do aluno: {alunoAtual.Nota3}" + "\n");
                 Console.WriteLine();
             }
-        }
+        } //V
 
         private void ObterAlunoPorCodigo()
         {
@@ -258,8 +249,22 @@ Terceira nota do aluno: {alunoSelecionado.Nota3}" + "\n");
         public void ApresentarMediaNotas()
         {
             Console.WriteLine($"A média das notas dos alunos é: {alunoServico.ObterMediasNotas()}");
-        }
+        } //V
 
+        public void ObterNomes()
+        {
+            var nomes = alunoServico.ObterNomesAlunos();
+
+            if (nomes != null)
+            {
+                for (var i = 0; i < nomes.Count; i++)
+                {
+                    Console.WriteLine(nomes[i]);
+                }
+                return;
+            }
+            Console.WriteLine("Nnehum aluno cadastrado ainda");
+        } //V
 
         private void ListarAprovados()
         {
@@ -272,6 +277,56 @@ Terceira nota do aluno: {alunoSelecionado.Nota3}" + "\n");
             }
 
             Console.WriteLine($"O nome dos alunos aprovados é: {nomesAprovados}");
-        }
+        } //V
+
+        private void ListarReprovados()
+        {
+            var nomesReprovados = "";
+            var alunos = alunoServico.ObterReprovados();
+
+            for (var i = 0; i < alunos.Count; i++)
+            {
+                nomesReprovados += alunos[i] + " | ";
+            }
+
+            Console.WriteLine($"O nome dos alunos reprovados é: {nomesReprovados}");
+        } //V
+
+        private void ListarEmExame()
+        {
+            var nomesEmExame = "";
+            var alunos = alunoServico.ObterEmExame();
+
+            for (var i = 0; i < alunos.Count; i++)
+            {
+                nomesEmExame += alunos[i] + " | ";
+            }
+            Console.WriteLine($"O nome dos alunos em exame é: {nomesEmExame}");
+        } //V
+
+        private void ObterMediaIdades()
+        {
+            Console.WriteLine($"A média de idade dos alunos é: {alunoServico.ObterMediaIdades()}");
+        } //V
+
+        private void ObterMediaPorCodigo()
+        {
+            ObterTodosAlunos();
+
+            Console.Write("Digite o código da matrícula do aluno que deseja ver a média: ");
+            var codigo = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine($"A média do aluno é: {alunoServico.ObterMediaPorCodigoMatricula(codigo)}");
+        } //V
+
+        private void ObterStatusPorCodigo()
+        {
+            ObterTodosAlunos();
+
+            Console.WriteLine("Digite o código do aluno que deseja saber o status: ");
+            var status = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine($"O status do aluno é: {alunoServico.ObterStatusPorCodigoMatricula(status)}");
+        } //V
     }
 }
