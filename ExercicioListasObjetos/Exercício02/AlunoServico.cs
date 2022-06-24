@@ -158,7 +158,7 @@
                 var alunoAtual = alunos[i];
 
                 if (alunoAtual.ObterStatus() == AlunoStatus.EmExame)
-                    exame.Add(alunoAtual.Nome)
+                    exame.Add(alunoAtual.Nome);
             }
             return exame;
         } //V

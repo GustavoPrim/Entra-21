@@ -197,5 +197,10 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
         {
             return peso / Math.Pow(altura, 2);
         }
+
+        private void PacientesForm_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
