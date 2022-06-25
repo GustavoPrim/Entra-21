@@ -1,13 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Entra21.ExemplosWindowsForms.Exemplo01
 {
@@ -40,7 +31,7 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
             // Obter lista dos pacientes que foram cadastrados, ou seja, armazenados no JSON
             var pacientes = pacienteServico.ObterTodos();
 
-            for(var i = 0; i < pacientes.Count; i++)
+            for (var i = 0; i < pacientes.Count; i++)
             {
                 var paciente = pacientes[i];
                 comboBoxPaciente.Items.Add(paciente.Nome);
@@ -171,7 +162,7 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
             var resultado = httpClient.GetAsync($"https://viacep.com.br/ws/{cep}/json/").Result;
 
             // Verificar se a requisição deu certo
-            if(resultado.StatusCode == System.Net.HttpStatusCode.OK)
+            if (resultado.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 // Obter a resposta da requisição
                 var resposta = resultado.Content.ReadAsStringAsync().Result;
@@ -199,7 +190,7 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
                 return false;
             }
 
-            if(enderecoCompleto.Trim().Length < 10)
+            if (enderecoCompleto.Trim().Length < 10)
             {
                 MessageBox.Show("Endereço completo deve conter no mínimo 10 caracteres");
 

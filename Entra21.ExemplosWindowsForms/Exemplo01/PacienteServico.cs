@@ -1,9 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Entra21.ExemplosWindowsForms.Exemplo01
 {
@@ -27,7 +22,7 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
         public Paciente ObterPorNomePaciente(string nomePaciente)
         {
             //Percorrer a lista de pacientes para encontrar o paciente por nome
-            for(var i = 0; i < pacientes.Count; i++)
+            for (var i = 0; i < pacientes.Count; i++)
             {
                 // Obter o paciente que está sendo percorrido
                 var paciente = pacientes[i];
@@ -52,6 +47,74 @@ namespace Entra21.ExemplosWindowsForms.Exemplo01
             var pacientesJson = File.ReadAllText("pacientes.json");
 
             pacientes = JsonConvert.DeserializeObject<List<Paciente>>(pacientesJson);
+        }
+
+        public int ObterUltimoCodigo()
+        {
+            int ultimoCodigo = 0;
+
+            for (int i = 0; i < pacientes.Count; i++)
+            {
+                var paciente = pacientes[i];
+
+                ultimoCodigo = paciente.Codigo;
+            }
+
+            return ultimoCodigo;
+        }
+
+        public void Cadastrar(Paciente paciente)
+        {
+            pacientes.Add(paciente);
+
+            SalvarArquivo();
+        }
+
+        public void Editar(Paciente pacienteParaEditar)
+        {
+            var paciente = ObterPorCodigo(pacienteParaEditar.Codigo);
+
+            paciente.Nome = pacienteParaEditar.Nome;
+            paciente.Altura = pacienteParaEditar.Altura;
+            paciente.Peso = pacienteParaEditar.Peso;
+
+            SalvarArquivo();
+        }
+
+        public Paciente ObterPorCodigo(int codigo)
+        {
+            for (int i = 0; i < pacientes.Count; i++)
+            {
+                var paciente = pacientes[i];
+
+                if (paciente.Codigo == codigo)
+                    return paciente;
+            }
+
+            return null;
+        }
+
+        public void Apagar(int codigo)
+        {
+            for (int i = 0; i < pacientes.Count; i++)
+            {
+                var paciente = pacientes[i];
+
+                if (paciente.Codigo == codigo)
+                {
+                    pacientes.Remove(paciente);
+
+                    SalvarArquivo();
+
+                    return;
+                }
+            }
+        }
+
+        private void SalvarArquivo()
+        {
+            var pacientesJson = JsonConvert.SerializeObject(pacientes);
+            File.WriteAllText("pacientes.json", pacientesJson);
         }
     }
 }
