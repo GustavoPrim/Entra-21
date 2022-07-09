@@ -736,7 +736,75 @@ INSERT INTO pokemons (nome, codigo, categoria, descricao, altura, peso, hp, ataq
 ('Diancie', '719', 'Jewel', 'A sudden transformation of Carbink,its pink, glimmering body is said to bethe loveliest sight in the whole world.', 0.7, 8.8, 2, 5, 6, 5, 6, 3),
 ('Hoopa', '720', 'Mischief', 'In its true form, it possesses a huge amount of power. Legends of its avarice tell how it once carried off an entire castle to gain the treasure hidden within.', 0.5, 9.0, 4, 6, 3, 6, 5, 4);
 
+-- LISTA DE SELECT
+
 -- QUESTÃO 01
-SELECT id AS 'Id', nome AS 'Nome', codigo AS 'Código', categoria AS 'Categoria', altura AS 'Altura', peso AS 'Peso',
+-- Selecione todas as colunas.
+SELECT id AS 'Código', nome AS 'Nome', codigo AS 'Código Pokemon', categoria AS 'Categoria', altura AS 'Altura', peso AS 'Peso',
 hp AS 'Hp', ataque AS 'Ataque', defesa AS 'Defesa', especial_ataque AS 'Especial Ataque', especial_defesa AS 'Especial Defesa',
 velocidade AS 'Velocidade', descricao AS 'Descrição' FROM pokemons;
+
+-- QUESTÃO 02
+-- Selecione o ataque, ataque especial, defesa e defesa especial.
+SELECT ataque AS 'Ataque', especial_ataque AS 'Ataque especial', defesa AS 'Defesa', especial_defesa  AS 'Defesa especial'
+	FROM pokemons;
+
+-- QUESTÃO 03
+-- Selecione nome, categoria e ataque ordenado pelo ataque em ordem crescente.
+SELECT id AS 'Código',codigo AS 'Código Pokemon', nome AS 'Nome', categoria AS 'Categoria', ataque AS 'Ataque'
+	FROM pokemons
+		ORDER BY ataque ASC;
+
+-- QUESTÃO 04
+-- Selecione altura, peso, com o cálculo do imc.
+SELECT codigo AS 'Código Pokemon', altura AS 'Altura', peso AS 'Peso',((altura * altura) / peso) AS 'IMC'
+	FROM pokemons;
+
+-- QUESTÃO 05
+-- Selecione altura, peso, com o cálculo do imc ordenando o imc em ordem decrescente.
+SELECT codigo AS 'Código Pokemon', altura AS 'Altura', peso AS 'Peso', ((altura * altura) / peso) AS 'IMC'
+	FROM pokemons
+		ORDER BY 'IMC' DESC;
+
+-- QUESTÃO 06
+-- Selecione nome e o tamanho do nome em ordem decrescente pelo nome.
+SELECT codigo AS 'Código Pokemon', nome AS 'Nome', LEN(nome) AS 'Tamanho do nome'
+	FROM pokemons
+		ORDER BY LEN(nome) DESC;
+
+-- QUESTÃO 07
+-- Selecione nome, descrição, quando o nome contiver mais que 10 caracteres.
+SELECT codigo AS 'Código', nome AS 'Nome', descricao AS 'Descrição'
+	FROM pokemons
+		WHERE LEN(nome) > 10;
+
+-- QUESTÃO 08
+-- Selecione nome, categoria, e ataque do pokemon que contém o menor valor de ataque.
+SELECT codigo AS 'Código', nome AS 'Nome', categoria AS 'Categoria', ataque AS 'Ataque'
+	FROM pokemons
+		WHERE ataque = (SELECT MIN(g.ataque) FROM pokemons g);
+
+-- QUESTÃO 09
+-- Selecione o ataque, ataque especial, nome, defesa e defesa especial ordenando pelo ataque.
+SELECT ataque AS 'Ataque', especial_ataque AS 'Ataque especial', nome AS 'Nome', defesa AS 'Defesa', especial_defesa AS 'Defesa especial'
+	FROM pokemons
+		ORDER BY ataque ASC;
+
+-- QUESTÃO 10
+-- Selecione a média dos ataques.
+SELECT AVG(ataque) AS 'Média dos ataques dos pokemons'
+	FROM pokemons;
+
+-- QUESTÃO 11
+-- Selecione a somatória dos ataques.
+SELECT SUM(ataque) AS 'Soma dos ataques dos pokemons'
+	FROM pokemons;
+
+-- QUESTÃO 12
+-- Selecione a média dos ataques especiais quando o nome do pokemon começar com ‘P’.
+SELECT AVG(especial_ataque) AS 'Média dos ataques especiais dos pokemons que começam com "P"'
+	FROM pokemons
+		WHERE nome LIKE 'P%';
+
+--=================================================================================================================	
+-- LISTA DE UPDATE

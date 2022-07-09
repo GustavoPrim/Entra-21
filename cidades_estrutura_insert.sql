@@ -5489,3 +5489,92 @@ INSERT INTO cidades VALUES
 ('TO', 'Tupiratins'),
 ('TO', 'Wanderlândia'),
 ('TO', 'Xambioá');
+
+-- LISTA DE SELECT
+
+-- QUESTÃO 01
+-- Selecione o estado e cidade.
+SELECT estado AS 'UF', cidade AS 'Cidade'
+	FROM cidades;
+
+-- QUESTÃO 02
+-- Selecione as cidades que começam com a letra A.
+SELECT cidade, estado
+	FROM cidades
+		WHERE cidade LIKE 'A%';
+
+-- QUESTÃO 03
+-- Selecione as cidades que contenham no ‘apar’ em qualquer parte do nome
+SELECT cidade, estado
+	FROM cidades
+		WHERE cidade LIKE '%apar%'
+
+-- QUESTÃO 04
+-- Selecione as cidades que começam com a letra W.
+SELECT cidade, estado
+	FROM cidades
+		WHERE cidade LIKE 'W%';
+
+-- QUESTÃO 05
+-- Selecione o estado e a cidade que a cidade termina com ‘tuba’ ordenando pelo estado em ordem decrescente.
+SELECT cidade, estado
+	FROM cidades
+		WHERE cidade LIKE '%tuba'
+			ORDER BY estado DESC;
+
+-- QUESTÃO 06
+-- Selecione a cidade que o nome da cidade contenha mais que 15 caracteres, ordenando pelo quantidade de caracteres.
+SELECT cidade, estado, LEN(cidade) AS 'Quantidade de caracteres da cidade'
+	FROM cidades
+		WHERE LEN(cidade) > 15
+			ORDER BY LEN(cidade) ASC;
+
+-- QUESTÃO 07
+-- Contabilize a quantidade de cidades do estado de SC.
+SELECT COUNT(cidade) AS 'Quantidade de cidades no estado de SC'
+	FROM cidades
+		WHERE estado = 'sc';
+
+-- QUESTÃO 08
+-- Contabilize a quantidade de cidades do estado de SP.
+SELECT COUNT(cidade) AS 'Quantidade de cidades no estado de SP'
+	FROM cidades
+		WHERE estado = 'sp';
+
+-- QUESTÃO 09
+-- Selecione o nome da cidade com a quantidade de caracteres, quando o nome da cidade conter 10 caracteres.
+SELECT CONCAT(
+			cidade, '   -   ', LEN(cidade)) AS 'Nome e quantidade de caracteres da cidade', estado
+				FROM cidades WHERE LEN(cidade) = 10;
+
+--======================================================================================================================
+-- LISTA DE UPDATE
+
+-- QUESTÃO 01
+UPDATE cidades 
+	SET estado = 'SS' 
+		WHERE estado = 'SC';
+
+-- QUESTÃO 02
+UPDATE cidades 
+	SET cidade = 'Brumenau',
+		estado = 'SC' 
+			WHERE cidade = 'Blumenau';
+
+
+-- QUESTÃO 03
+UPDATE cidades SET cidade = 'Batata' WHERE cidade LIKE 'Bata%';
+
+-- QUESTÃO 04
+
+-- QUESTÃO 05
+UPDATE cidades SET estado = 'SC' WHERE cidade LIKE 'Indaia%';
+
+-- QUESTÃO 06
+UPDATE cidades SET estado = 'SC' WHERE cidade LIKE '%Timbó%';
+
+-- QUESTÃO 07
+
+-- QUESTÃO 08
+UPDATE cidades SET estado = 'PS' WHERE estado LIKE '%SP%';
+
