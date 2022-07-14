@@ -45,7 +45,7 @@ SELECT titulo AS 'Título', CONCAT(SUBSTRING(descricao, 0, 30), '. . .') AS 'Des
 SELECT id, titulo, data_publicacao 
 	FROM trabalhos WHERE
 	YEAR(data_publicacao) >= 1990 AND 
-	Year(data_publicacao) <= 2010;
+	YEAR(data_publicacao) <= 2010;
 
 -- Consultar data publicação formato BR
 -- BR: dia/mês/ano
