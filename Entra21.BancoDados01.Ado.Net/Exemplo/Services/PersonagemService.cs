@@ -48,7 +48,7 @@ namespace Entra21.BancoDados01.Ado.Net.Services
             // Conectado no banco de dados e definido a query que será executada
             var conexao = new Conexao().Conectar();
             var comando = conexao.CreateCommand();
-            comando.CommandText = "UPDATE personagens SET id_tipo_personagens = @ID_TIPO_PERSONAGEM," +
+            comando.CommandText = "UPDATE personagens SET id_tipo_personagem = @ID_TIPO_PERSONAGEM," +
                 "id_editora = @ID_EDITORA, nome = @NOME WHERE id = @ID";
 
             // Substituir os @ do update com os valores preenchidos pelo usuário
