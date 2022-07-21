@@ -13,9 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Exercicio\Models\" />
     <Folder Include="Exercicio\Views\" />
-    <Folder Include="Exercicio\Services\" />
   </ItemGroup>
 
 </Project>
