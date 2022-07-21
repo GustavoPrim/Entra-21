@@ -6,9 +6,9 @@
         public string Nome { get; set; }
         public int QuantidadeHabitantes { get; set; }
         public DateTime DataHoraFundacao { get; set; }
-        public decimal Pib { get; set;}
+        public decimal Pib { get; set; }
 
-        // Preencher com INNER JOIN
+        // preencher com INNER JOIN
         public UnidadeFederativa UnidadeFederativa { get; set; }
     }
 }

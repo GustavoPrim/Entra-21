@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using Entra21.BancoDados01.Ado.Net.DataBase;
 using Entra21.BancoDados01.Ado.Net.Exercicio.Models;
 
@@ -90,10 +85,16 @@ namespace Entra21.BancoDados01.Ado.Net.Exercicio.Services
                 var linha = tabelaMemoria.Rows[i];
 
                 var unidadeFederativa = new UnidadeFederativa();
+
                 unidadeFederativa.Id = Convert.ToInt32(linha["id"].ToString());
                 unidadeFederativa.Nome = linha["nome"].ToString();
                 unidadeFederativa.Sigla = linha["sigla"].ToString();
+
+                unidadesFederativas.Add(unidadeFederativa);
             }
+            comando.Connection.Close();
+
+            return unidadesFederativas;
         }
     }
 }

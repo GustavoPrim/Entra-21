@@ -113,7 +113,7 @@ INNER JOIN unidades_federativas AS uf ON(c.id_unidade_federativa = uf.id)";
 
             var cidades = new List<Cidade>();
 
-            for(var i = 0; i < tabelaMemoria.Rows.Count; i++)
+            for (var i = 0; i < tabelaMemoria.Rows.Count; i++)
             {
                 var registro = tabelaMemoria.Rows[i];
 
@@ -130,6 +130,8 @@ INNER JOIN unidades_federativas AS uf ON(c.id_unidade_federativa = uf.id)";
 
                 cidades.Add(cidade);
             }
+            comando.Connection.Close();
+
             return cidades;
         }
     }
