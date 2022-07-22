@@ -75,7 +75,7 @@
             // labelSiglaUf
             // 
             this.labelSiglaUf.AutoSize = true;
-            this.labelSiglaUf.Location = new System.Drawing.Point(260, 9);
+            this.labelSiglaUf.Location = new System.Drawing.Point(258, 9);
             this.labelSiglaUf.Name = "labelSiglaUf";
             this.labelSiglaUf.Size = new System.Drawing.Size(32, 15);
             this.labelSiglaUf.TabIndex = 4;
@@ -83,9 +83,10 @@
             // 
             // textBoxSiglaUf
             // 
+            this.textBoxSiglaUf.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxSiglaUf.Location = new System.Drawing.Point(248, 27);
             this.textBoxSiglaUf.Name = "textBoxSiglaUf";
-            this.textBoxSiglaUf.Size = new System.Drawing.Size(54, 23);
+            this.textBoxSiglaUf.Size = new System.Drawing.Size(53, 23);
             this.textBoxSiglaUf.TabIndex = 5;
             // 
             // UnidadeFederativaCadastroEdicaoForm

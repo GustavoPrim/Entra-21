@@ -1,14 +1,7 @@
-﻿using Entra21.BancoDados01.Ado.Net.Views.Personagens;
+﻿using Entra21.BancoDados01.Ado.Net.Views.Cidades;
+using Entra21.BancoDados01.Ado.Net.Views.Personagens;
 using Entra21.BancoDados01.Ado.Net.Views.TiposPersonagens;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using Entra21.BancoDados01.Ado.Net.Views.UnidadesFederativas;
 
 namespace Entra21.BancoDados01.Ado.Net.Views
 {
@@ -29,6 +22,18 @@ namespace Entra21.BancoDados01.Ado.Net.Views
         {
             var personagemForm = new PersonagemListagemForm();
             personagemForm.ShowDialog();
+        }
+
+        private void buttonUnidadesFederativas_Click(object sender, EventArgs e)
+        {
+            var ufForm = new UnidadeFederativaListagemForm();
+            ufForm.ShowDialog();
+        }
+
+        private void buttonCidades_Click(object sender, EventArgs e)
+        {
+            var cidadeForm = new CidadeListagemForm();
+            cidadeForm.ShowDialog();
         }
     }
 }

@@ -45,13 +45,14 @@ namespace Entra21.BancoDados01.Ado.Net.Exercicio.Services
             var comando = conexao.CreateCommand();
             comando.CommandText = @"UPDATE cidades SET id_unidade_federativa = @ID_UNIDADE_FEDERATIVA,
                                     nome = @NOME, quantidade_habitantes = @QUANTIDADE_HABITANTES,
-                                    data_hora_fundacao = @DATA_HORA_FUNDACAO, pib = @PIB";
+                                    data_hora_fundacao = @DATA_HORA_FUNDACAO, pib = @PIB WHERE id = @ID";
             // previnir Sql Injection
             comando.Parameters.AddWithValue("@ID_UNIDADE_FEDERATIVA", cidade.UnidadeFederativa.Id);
             comando.Parameters.AddWithValue("@NOME", cidade.Nome);
             comando.Parameters.AddWithValue("@QUANTIDADE_HABITANTES", cidade.QuantidadeHabitantes);
             comando.Parameters.AddWithValue("@DATA_HORA_FUNDACAO", cidade.DataHoraFundacao);
             comando.Parameters.AddWithValue("@PIB", cidade.Pib);
+            comando.Parameters.AddWithValue("@ID", cidade.Id);
 
             // executa o insert
             comando.ExecuteNonQuery();
@@ -100,14 +101,14 @@ namespace Entra21.BancoDados01.Ado.Net.Exercicio.Services
             var comando = conexao.CreateCommand();
 
             comando.CommandText = @"SELECT
-c.id AS 'id',
-c.nome AS 'NomeCidade',
-c.quantidade_habitantes AS 'QuantidadeHabitantes',
-c.data_hora_fundacao AS 'Fundacao',
-c.pib AS 'Pib',
-uf.id AS 'IdUnidadeFederativa',
-uf.nome AS 'NomeUnidadeFederativa',
-uf.sigla AS 'SiglaUnidadeFederativa'
+c.id,
+c.nome,
+c.quantidade_habitantes,
+c.data_hora_fundacao,
+c.pib,
+uf.id AS 'id_uf',
+uf.nome AS 'nome_uf',
+uf.sigla AS 'sigla_uf'
 FROM cidades AS c
 INNER JOIN unidades_federativas AS uf ON(c.id_unidade_federativa = uf.id)";
 
@@ -130,9 +131,9 @@ INNER JOIN unidades_federativas AS uf ON(c.id_unidade_federativa = uf.id)";
 
                 // instamciado unidade federativa para armazenar o registro da mesma
                 cidade.UnidadeFederativa = new UnidadeFederativa();
-                cidade.UnidadeFederativa.Id = Convert.ToInt32(registro["unidade_federativa_id"]);
-                cidade.UnidadeFederativa.Nome = registro["unidade_federativa_nome"].ToString();
-                cidade.UnidadeFederativa.Sigla = registro["unidade_federativa_sigla"].ToString();
+                cidade.UnidadeFederativa.Id = Convert.ToInt32(registro["id_uf"]);
+                cidade.UnidadeFederativa.Nome = registro["nome_uf"].ToString();
+                cidade.UnidadeFederativa.Sigla = registro["sigla_uf"].ToString();
 
                 cidades.Add(cidade);
             }

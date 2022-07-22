@@ -33,13 +33,15 @@
             this.labelPibCidade = new System.Windows.Forms.Label();
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.comboBoxEstado = new System.Windows.Forms.ComboBox();
-            this.maskedTextBoxPib = new System.Windows.Forms.MaskedTextBox();
             this.dateTimePickerDataFundacao = new System.Windows.Forms.DateTimePicker();
             this.labelFundacaoCidade = new System.Windows.Forms.Label();
             this.labelQuantidadeHabitantes = new System.Windows.Forms.Label();
-            this.maskedTextBoxQuantidadeHabitantes = new System.Windows.Forms.MaskedTextBox();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
+            this.textBoxPib = new System.Windows.Forms.TextBox();
+            this.textBoxQuantidadeHabitantes = new System.Windows.Forms.TextBox();
+            this.dateTimePickerHoraFundacao = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelNomeCidade
@@ -80,6 +82,7 @@
             // comboBoxEstado
             // 
             this.comboBoxEstado.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.comboBoxEstado.DisplayMember = "Nome";
             this.comboBoxEstado.ForeColor = System.Drawing.SystemColors.WindowText;
             this.comboBoxEstado.FormattingEnabled = true;
             this.comboBoxEstado.Location = new System.Drawing.Point(9, 84);
@@ -87,29 +90,21 @@
             this.comboBoxEstado.Size = new System.Drawing.Size(262, 23);
             this.comboBoxEstado.TabIndex = 4;
             // 
-            // maskedTextBoxPib
-            // 
-            this.maskedTextBoxPib.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.maskedTextBoxPib.Location = new System.Drawing.Point(9, 128);
-            this.maskedTextBoxPib.Mask = "$9.999.999.999.999,99";
-            this.maskedTextBoxPib.Name = "maskedTextBoxPib";
-            this.maskedTextBoxPib.Size = new System.Drawing.Size(262, 23);
-            this.maskedTextBoxPib.TabIndex = 5;
-            // 
             // dateTimePickerDataFundacao
             // 
+            this.dateTimePickerDataFundacao.CalendarForeColor = System.Drawing.SystemColors.ControlDark;
             this.dateTimePickerDataFundacao.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
             this.dateTimePickerDataFundacao.CalendarTitleBackColor = System.Drawing.SystemColors.ScrollBar;
             this.dateTimePickerDataFundacao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDataFundacao.Location = new System.Drawing.Point(9, 172);
+            this.dateTimePickerDataFundacao.Location = new System.Drawing.Point(9, 216);
             this.dateTimePickerDataFundacao.Name = "dateTimePickerDataFundacao";
-            this.dateTimePickerDataFundacao.Size = new System.Drawing.Size(262, 23);
+            this.dateTimePickerDataFundacao.Size = new System.Drawing.Size(109, 23);
             this.dateTimePickerDataFundacao.TabIndex = 6;
             // 
             // labelFundacaoCidade
             // 
             this.labelFundacaoCidade.AutoSize = true;
-            this.labelFundacaoCidade.Location = new System.Drawing.Point(9, 154);
+            this.labelFundacaoCidade.Location = new System.Drawing.Point(9, 198);
             this.labelFundacaoCidade.Name = "labelFundacaoCidade";
             this.labelFundacaoCidade.Size = new System.Drawing.Size(100, 15);
             this.labelFundacaoCidade.TabIndex = 7;
@@ -118,20 +113,11 @@
             // labelQuantidadeHabitantes
             // 
             this.labelQuantidadeHabitantes.AutoSize = true;
-            this.labelQuantidadeHabitantes.Location = new System.Drawing.Point(9, 198);
+            this.labelQuantidadeHabitantes.Location = new System.Drawing.Point(9, 154);
             this.labelQuantidadeHabitantes.Name = "labelQuantidadeHabitantes";
             this.labelQuantidadeHabitantes.Size = new System.Drawing.Size(143, 15);
             this.labelQuantidadeHabitantes.TabIndex = 8;
             this.labelQuantidadeHabitantes.Text = "Quantidade de habitantes";
-            // 
-            // maskedTextBoxQuantidadeHabitantes
-            // 
-            this.maskedTextBoxQuantidadeHabitantes.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.maskedTextBoxQuantidadeHabitantes.Location = new System.Drawing.Point(9, 216);
-            this.maskedTextBoxQuantidadeHabitantes.Mask = "99.999.999";
-            this.maskedTextBoxQuantidadeHabitantes.Name = "maskedTextBoxQuantidadeHabitantes";
-            this.maskedTextBoxQuantidadeHabitantes.Size = new System.Drawing.Size(262, 23);
-            this.maskedTextBoxQuantidadeHabitantes.TabIndex = 9;
             // 
             // buttonCancelar
             // 
@@ -155,19 +141,54 @@
             this.buttonSalvar.UseVisualStyleBackColor = false;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
+            // textBoxPib
+            // 
+            this.textBoxPib.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBoxPib.Location = new System.Drawing.Point(9, 128);
+            this.textBoxPib.Name = "textBoxPib";
+            this.textBoxPib.Size = new System.Drawing.Size(262, 23);
+            this.textBoxPib.TabIndex = 12;
+            // 
+            // textBoxQuantidadeHabitantes
+            // 
+            this.textBoxQuantidadeHabitantes.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBoxQuantidadeHabitantes.Location = new System.Drawing.Point(9, 172);
+            this.textBoxQuantidadeHabitantes.Name = "textBoxQuantidadeHabitantes";
+            this.textBoxQuantidadeHabitantes.Size = new System.Drawing.Size(262, 23);
+            this.textBoxQuantidadeHabitantes.TabIndex = 13;
+            // 
+            // dateTimePickerHoraFundacao
+            // 
+            this.dateTimePickerHoraFundacao.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePickerHoraFundacao.Location = new System.Drawing.Point(162, 216);
+            this.dateTimePickerHoraFundacao.Name = "dateTimePickerHoraFundacao";
+            this.dateTimePickerHoraFundacao.Size = new System.Drawing.Size(109, 23);
+            this.dateTimePickerHoraFundacao.TabIndex = 14;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(161, 199);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 15);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Hora de fundação";
+            // 
             // CidadeCadastroEdicaoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(283, 282);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dateTimePickerHoraFundacao);
+            this.Controls.Add(this.textBoxQuantidadeHabitantes);
+            this.Controls.Add(this.textBoxPib);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonCancelar);
-            this.Controls.Add(this.maskedTextBoxQuantidadeHabitantes);
             this.Controls.Add(this.labelQuantidadeHabitantes);
             this.Controls.Add(this.labelFundacaoCidade);
             this.Controls.Add(this.dateTimePickerDataFundacao);
-            this.Controls.Add(this.maskedTextBoxPib);
             this.Controls.Add(this.comboBoxEstado);
             this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.labelPibCidade);
@@ -188,12 +209,14 @@
         private Label labelPibCidade;
         private TextBox textBoxNome;
         private ComboBox comboBoxEstado;
-        private MaskedTextBox maskedTextBoxPib;
         private DateTimePicker dateTimePickerDataFundacao;
         private Label labelFundacaoCidade;
         private Label labelQuantidadeHabitantes;
-        private MaskedTextBox maskedTextBoxQuantidadeHabitantes;
         private Button buttonCancelar;
         private Button buttonSalvar;
+        private TextBox textBoxPib;
+        private TextBox textBoxQuantidadeHabitantes;
+        private DateTimePicker dateTimePickerHoraFundacao;
+        private Label label1;
     }
 }

@@ -34,7 +34,7 @@ namespace Entra21.BancoDados01.Ado.Net.Views.UnidadesFederativas
             }
 
             var nome = textBoxNomeUf.Text.Trim();
-            var sigla = textBoxSiglaUf.Text.Trim().ToUpper();
+            var sigla = textBoxSiglaUf.Text.Trim();
             var unidadeFederativa = new UnidadeFederativa();
             unidadeFederativa.Nome = nome;
             unidadeFederativa.Sigla = sigla;

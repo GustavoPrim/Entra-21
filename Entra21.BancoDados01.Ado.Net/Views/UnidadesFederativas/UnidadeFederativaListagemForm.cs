@@ -79,5 +79,10 @@ namespace Entra21.BancoDados01.Ado.Net.Views.UnidadesFederativas
 
             AtualizarDataGrideView();
         }
+
+        private void UnidadeFederativaListagemForm_Load(object sender, EventArgs e)
+        {
+            AtualizarDataGrideView();
+        }
     }
 }

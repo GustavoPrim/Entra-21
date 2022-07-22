@@ -33,7 +33,7 @@ CREATE TABLE cidades(
 
 	id_unidade_federativa INTEGER,
 
-	nome VARCHAR(30),
+	nome VARCHAR(40),
 	quantidade_habitantes INTEGER,
 	data_hora_fundacao DATETIME2,
 	pib DECIMAL(15,2)
