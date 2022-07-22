@@ -808,3 +808,66 @@ SELECT AVG(especial_ataque) AS 'Média dos ataques especiais dos pokemons que co
 
 --=================================================================================================================	
 -- LISTA DE UPDATE
+-- QUESTÃO 01
+UPDATE pokemons SET categoria = 'Seed'
+	WHERE codigo >= 50 AND codigo <= 100;
+
+-- QUESTÃ0 02
+UPDATE pokemons SET ataque = 29
+	WHERE nome LIKE '%inj%';
+
+-- QUESTÃ0 03
+UPDATE pokemons SET velocidade = 2
+	WHERE velocidade = 5;
+
+-- QUESTÃ0 04
+UPDATE pokemons SET categoria = 'Manipulate'
+	WHERE codigo = 100;
+
+-- QUESTÃ0 05
+UPDATE pokemons SET nome = REPLACE(nome, SUBSTRING(nome, 1, 1), 'C')
+	WHERE nome LIKE 'R%';
+
+-- QUESTÃ0 06
+UPDATE pokemons SET altura = 0.51,
+					peso = 0.70
+	WHERE altura = 0.50;
+
+-- QUESTÃ0 07
+UPDATE pokemons SET codigo = 1,
+					defesa = 1,
+					ataque = 1,
+					especial_ataque = 3,
+					especial_defesa = 4
+	WHERE especial_ataque = 4 AND especial_defesa = 3;
+
+-- QUESTÃ0 08
+UPDATE pokemons SET nome = SUBSTRING(nome, 1, 10)
+	WHERE LEN(nome) > 10;
+
+-- QUESTÃ0 09
+UPDATE pokemons SET categoria = 'Water'
+	WHERE descricao LIKE '%flame%';
+
+-- QUESTÃ0 10
+UPDATE pokemons SET codigo = 151
+	WHERE codigo = 155;
+
+-- QUESTÃ0 11
+UPDATE pokemons SET nome = 'Naruto',
+					ataque = 1
+	WHERE nome = 'Kabuto';
+
+-- QUESTÃ0 12
+UPDATE pokemons SET nome = 'Sasuke',
+					especial_ataque = 8002,
+					ataque = 8001
+	WHERE nome = 'Mew' OR nome = 'Mewtwo';
+
+-- QUESTÃ0 13
+UPDATE pokemons SET descricao = 'Lorem ipsum.',
+					nome = 'Tyranitar',
+					categoria = 'Wood Gecko'
+	WHERE codigo % 2 = 0;
+--===============================================================================================================
+-- LISTA DE DELETE

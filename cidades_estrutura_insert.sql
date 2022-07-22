@@ -1,5 +1,3 @@
-
-DROP TABLE cidades;
 CREATE TABLE cidades (
 	estado CHAR(2),
 	cidade VARCHAR(100)
@@ -5563,18 +5561,39 @@ UPDATE cidades
 
 
 -- QUESTÃO 03
-UPDATE cidades SET cidade = 'Batata' WHERE cidade LIKE 'Bata%';
+UPDATE cidades SET cidade = 'Batata'
+	WHERE cidade LIKE 'Bata%';
 
 -- QUESTÃO 04
+UPDATE cidades SET cidade = REPLACE(cidade, 'Belo', 'Lindo')
+	WHERE cidade LIKE '%Belo%';
 
 -- QUESTÃO 05
-UPDATE cidades SET estado = 'SC' WHERE cidade LIKE 'Indaia%';
+UPDATE cidades SET estado = 'SC'
+	WHERE cidade LIKE 'Indaia%';
 
 -- QUESTÃO 06
-UPDATE cidades SET estado = 'SC' WHERE cidade LIKE '%Timbó%';
+UPDATE cidades SET estado = 'SC'
+	WHERE cidade LIKE '%Timbó%';
 
 -- QUESTÃO 07
+UPDATE cidades SET cidade = REPLACE(cidade, 'José', 'Josué')
+	WHERE cidade LIKE '%José%';
 
 -- QUESTÃO 08
-UPDATE cidades SET estado = 'PS' WHERE estado LIKE '%SP%';
+UPDATE cidades SET estado = 'PS'
+	WHERE estado LIKE '%SP%';
 
+-- QUESTÃO 09
+UPDATE cidades SET cidade = 'qualquer texto'
+	WHERE LEN(cidade) = 10;
+
+-- QUESTÃO 10
+UPDATE cidades SET cidade = 'It'
+	WHERE cidade LIKE 'It%'
+
+-- QUESTÃO 11
+UPDATE cidades SET estado = 'TO'
+	WHERE cidade LIKE '%ã';
+--==============================================================================================================
+-- LISTA DE DELETE

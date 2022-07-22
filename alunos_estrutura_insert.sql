@@ -2887,5 +2887,63 @@ SELECT AVG(media)
 
 --=============================================================================================================
 -- LISTA DE UPDATE
+-- QUESTÃO 01
+UPDATE alunos SET nota_1 = 9.9
+	WHERE YEAR(data_nascimento) = 1996;
 
+-- QUESTÃO 02
+UPDATE alunos SET nota_2 = 1.3
+	WHERE nome LIKE 'Urbano';
 
+-- QUESTÃO 03
+UPDATE alunos SET numero_favorito = 'random'
+	WHERE numero_favorito % 2 = 1;
+
+-- QUESTÃO 04
+UPDATE alunos SET signo = 'Áries',
+				  numero_favorito = 100,
+				  cor_preferida = 'Preto',
+				  nome = 'Marcela'
+					WHERE signo = 'Peixes';
+
+-- QUESTÃO 05
+UPDATE alunos SET cor_preferida = 'Azul',
+				  nota_2 = 9.3
+					WHERE cor_preferida = 'Cáqui';
+
+-- QUESTÃO 06
+UPDATE alunos SET cpf = '101.947.311-89'
+	WHERE cpf = '10194731189'
+
+-- QUESTÃO 07
+
+-- QUESTÃO 08
+UPDATE alunos SET nota_1 = 1,
+				  nota_2 = 1,
+				  nota_3 = 1,
+				  nota_4 = 1
+					WHERE media < 4;
+
+-- QUESTÃO 09
+UPDATE alunos SET nick = 'Ninjutsu'
+	WHERE nick = 'Fueusn';
+
+-- QUESTÃO 10
+UPDATE alunos SET nick = 'Dobermann',
+				  cor_preferida = 'Rosa'
+					WHERE nick = 'Saxiol';
+
+-- QUESTÃO 11
+UPDATE alunos SET data_nascimento = DAY(2005-08-30)
+	WHERE data_nascimento = DAY(2005-08-31);
+
+-- QUESTÃO 12
+UPDATE alunos SET cor_preferida = 'Roxo',
+				  nick = 'Roxolandia'
+					WHERE cor_preferida = 'Roxo' OR
+						  cor_preferida = 'Coral';
+
+-- QUESTÃO 13
+
+--==========================================================================================================
+-- LISTA DE DELETE

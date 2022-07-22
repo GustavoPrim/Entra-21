@@ -1,5 +1,5 @@
 ﻿using System.Data;
-using Entra21.BancoDados01.Ado.Net.DataBase;
+using Entra21.BancoDados01.Ado.Net.Exercicio.DataBase;
 using Entra21.BancoDados01.Ado.Net.Exercicio.Models;
 
 namespace Entra21.BancoDados01.Ado.Net.Exercicio.Services
@@ -101,10 +101,13 @@ namespace Entra21.BancoDados01.Ado.Net.Exercicio.Services
 
             comando.CommandText = @"SELECT
 c.id AS 'id',
-c.nome AS 'cidade_nome',
-uf.id AS 'unidade_federativa_id',
-uf.nome AS 'unidade_federativa_nome',
-uf.sigla AS 'unidade_federativa_sigla'
+c.nome AS 'NomeCidade',
+c.quantidade_habitantes AS 'QuantidadeHabitantes',
+c.data_hora_fundacao AS 'Fundacao',
+c.pib AS 'Pib',
+uf.id AS 'IdUnidadeFederativa',
+uf.nome AS 'NomeUnidadeFederativa',
+uf.sigla AS 'SiglaUnidadeFederativa'
 FROM cidades AS c
 INNER JOIN unidades_federativas AS uf ON(c.id_unidade_federativa = uf.id)";
 
@@ -121,6 +124,9 @@ INNER JOIN unidades_federativas AS uf ON(c.id_unidade_federativa = uf.id)";
                 var cidade = new Cidade();
                 cidade.Id = Convert.ToInt32(registro["id"]);
                 cidade.Nome = registro["nome"].ToString();
+                cidade.QuantidadeHabitantes = Convert.ToInt32(registro["quantidade_habitantes"]);
+                cidade.DataHoraFundacao = Convert.ToDateTime(registro["data_hora_fundacao"]);
+                cidade.Pib = Convert.ToDecimal(registro["pib"]);
 
                 // instamciado unidade federativa para armazenar o registro da mesma
                 cidade.UnidadeFederativa = new UnidadeFederativa();

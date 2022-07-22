@@ -1,6 +1,6 @@
-﻿using Entra21.BancoDados01.Ado.Net.DataBase;
+﻿using System.Data;
+using Entra21.BancoDados01.Ado.Net.Exercicio.DataBase;
 using Entra21.BancoDados01.Ado.Net.Models;
-using System.Data;
 
 namespace Entra21.BancoDados01.Ado.Net.Services
 {

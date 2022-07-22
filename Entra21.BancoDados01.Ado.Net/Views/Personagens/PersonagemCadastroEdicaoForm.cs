@@ -36,7 +36,7 @@ namespace Entra21.BancoDados01.Ado.Net.Views.Personagens
                 }
             }
 
-            // Percorrer cada um dos itens da editor, para selecionar o
+            // Percorrer cada um dos itens da editora, para selecionar o
             // que o usuaário tinha cadastrado
             for (var i = 0; i < comboBoxEditora.Items.Count; i++)
             {

@@ -1,5 +1,5 @@
 ﻿using System.Data;
-using Entra21.BancoDados01.Ado.Net.DataBase;
+using Entra21.BancoDados01.Ado.Net.Exercicio.DataBase;
 using Entra21.BancoDados01.Ado.Net.Exercicio.Models;
 
 namespace Entra21.BancoDados01.Ado.Net.Exercicio.Services
@@ -38,7 +38,7 @@ namespace Entra21.BancoDados01.Ado.Net.Exercicio.Services
             comando.CommandText = "UPDATE unidades_federativas SET nome = @NOME, sigla = @SIGLA WHERE id = @ID";
             comando.Parameters.AddWithValue("@NOME", unidadeFederativa.Nome);
             comando.Parameters.AddWithValue("@SIGLA", unidadeFederativa.Sigla);
-            comando.Parameters.AddWithValue("@", unidadeFederativa.Id);
+            comando.Parameters.AddWithValue("@ID", unidadeFederativa.Id);
 
             comando.ExecuteNonQuery();
             comando.Connection.Close();

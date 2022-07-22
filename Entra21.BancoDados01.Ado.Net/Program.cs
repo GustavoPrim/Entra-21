@@ -1,7 +1,4 @@
-using Entra21.BancoDados01.Ado.Net.Exercicio.Views.Cidades;
-using Entra21.BancoDados01.Ado.Net.Views;
-using Entra21.BancoDados01.Ado.Net.Views.Personagens;
-using Entra21.BancoDados01.Ado.Net.Views.TiposPersonagens;
+using Entra21.BancoDados01.Ado.Net.Views.UnidadesFederativas;
 
 namespace Entra21.BancoDados01.Ado.Net
 {
@@ -16,7 +13,7 @@ namespace Entra21.BancoDados01.Ado.Net
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new CidadeCadastroEdicaoForm());
+            Application.Run(new UnidadeFederativaListagemForm());
         }
     }
 }

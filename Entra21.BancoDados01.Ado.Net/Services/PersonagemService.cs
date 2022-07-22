@@ -1,4 +1,5 @@
-﻿using Entra21.BancoDados01.Ado.Net.DataBase;
+﻿using Entra21.BancoDados01.Ado.Net;
+using Entra21.BancoDados01.Ado.Net.Exercicio.DataBase;
 using Entra21.BancoDados01.Ado.Net.Models;
 using System.Data;
 
